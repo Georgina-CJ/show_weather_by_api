@@ -9,6 +9,11 @@ use Illuminate\Support\Facades\Auth;
 
 class WeatherController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function showTable()
     {
         if (!Auth::check()) {
